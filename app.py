@@ -3,10 +3,6 @@ from src.extraction import load_data
 
 st.set_page_config(layout='wide')
 
-def main ():
-    df = load_data()
-    st.dataframe(df)
-
 def create_dataframe_section(df):
     st.title("Database Section")
 
@@ -38,6 +34,11 @@ def create_dataframe_section(df):
     col_2.markdown(data_description)
 
     return None
+
+def main ():
+    df = load_data()
+    create_dataframe_section(df)
+    st.dataframe(df)
 
 if __name__ == '__main__':
     main()
